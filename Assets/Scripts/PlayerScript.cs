@@ -25,6 +25,11 @@ public class PlayerScript : MonoBehaviour
     public GameObject ball;
     public float kickSpeed;
 
+    [Header("Dirt particles")]
+    public ParticleSystem dirtParticles;
+    public float dirtParticleDelay;
+    private float dirtParticleTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +45,25 @@ public class PlayerScript : MonoBehaviour
         // Run at ball if within range
         if (Vector3.Distance(transform.position, ball.transform.position) < ballChaseRange) {
             newTransformPosition = Vector3.MoveTowards(transform.position, ball.transform.position, ballChaseSpeed * Time.deltaTime);
+
+            // Dirt particles
+            if (dirtParticleTimer >= dirtParticleDelay) {
+                // Put the particles at Players' feet and make it point away from direction of movement
+                Vector3 dirtParticleXY = new Vector3(transform.position.x, transform.position.y-0.1f, 0);
+                if (newTransformPosition.x < transform.position.x) { 
+                    dirtParticles.transform.localScale = new Vector2 (1, dirtParticles.transform.localScale.y);
+                }
+                else {
+                    dirtParticles.transform.localScale = new Vector2 (-1, dirtParticles.transform.localScale.y);
+                }
+
+                Instantiate(dirtParticles, dirtParticleXY, Quaternion.identity);
+                dirtParticles.Play();
+                dirtParticleTimer = 0;
+            }
+            else {
+                dirtParticleTimer += Time.deltaTime;
+            }
         }
         else { // Otherwise, wander randomly
             if (Vector3.Distance(transform.position, wanderTarget) < 0.1f || wanderTimer >= maxWanderTime) {
@@ -53,13 +77,12 @@ public class PlayerScript : MonoBehaviour
         // Flip horizontally when moving left
         Vector2 localScaleTemp = transform.localScale;
         if (newTransformPosition.x < transform.position.x) {
-            localScaleTemp.x = -1;
-            transform.localScale = localScaleTemp;
+            localScaleTemp.x = -1;  
         }
         else {
             localScaleTemp.x = 1;
-            transform.localScale = localScaleTemp;
         }
+        transform.localScale = localScaleTemp;
 
         transform.position = newTransformPosition; // Move
     }
