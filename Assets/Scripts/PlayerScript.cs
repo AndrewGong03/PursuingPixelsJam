@@ -9,11 +9,15 @@ public class PlayerScript : MonoBehaviour
     public float xRangeMin;
     public float yRangeMax;
     public float yRangeMin;
+    private Vector3 newTransformPosition;
+
+    [Header("Wander settings")]
     public float wanderSpeed;
     public Vector3 wanderTarget;
     public float wanderRadius;
     private float wanderTimer;
-    private float maxWanderTime;
+    public float maxWanderTime;
+
     [Header("Ball chasing")]
     public float ballChaseRange;
     public float ballChaseSpeed;
@@ -35,16 +39,29 @@ public class PlayerScript : MonoBehaviour
     {
         // Run at ball if within range
         if (Vector3.Distance(transform.position, ball.transform.position) < ballChaseRange) {
-            transform.position = Vector3.MoveTowards(transform.position, ball.transform.position, ballChaseSpeed * Time.deltaTime);
+            newTransformPosition = Vector3.MoveTowards(transform.position, ball.transform.position, ballChaseSpeed * Time.deltaTime);
         }
         else { // Otherwise, wander randomly
-            if (Vector3.Distance(transform.position, wanderTarget) < 0.1f || wanderTimer == maxWanderTime) {
+            if (Vector3.Distance(transform.position, wanderTarget) < 0.1f || wanderTimer >= maxWanderTime) {
                 wanderTarget = RandomWanderPoint();
                 wanderTimer = 0;
             }
-            transform.position = Vector3.MoveTowards(transform.position, wanderTarget, wanderSpeed * Time.deltaTime);
+            newTransformPosition = Vector3.MoveTowards(transform.position, wanderTarget, wanderSpeed * Time.deltaTime);
             wanderTimer += Time.deltaTime;
         }
+
+        // Flip horizontally when moving left
+        Vector2 localScaleTemp = transform.localScale;
+        if (newTransformPosition.x < transform.position.x) {
+            localScaleTemp.x = -1;
+            transform.localScale = localScaleTemp;
+        }
+        else {
+            localScaleTemp.x = 1;
+            transform.localScale = localScaleTemp;
+        }
+
+        transform.position = newTransformPosition; // Move
     }
 
     Vector3 RandomWanderPoint()

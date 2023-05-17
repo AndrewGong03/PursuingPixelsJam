@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7067647328132416486}
   - component: {fileID: 7067647328132416485}
   - component: {fileID: 8895407514137847040}
+  - component: {fileID: 7387839454456553167}
   m_Layer: 0
-  m_Name: Player
+  m_Name: BluePlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: de936a99baae44b958a1f3b1baa34f1d, type: 3}
+  m_Sprite: {fileID: 767738649, guid: 54e20a96a91774cf8bd70bc3915a171b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   wanderSpeed: 0.6
   wanderTarget: {x: 0, y: 0, z: 0}
   wanderRadius: 1
+  maxWanderTime: 0
   ballChaseRange: 1
   ballChaseSpeed: 1
   ball: {fileID: 0}
@@ -127,7 +129,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.33, y: 0.34}
+    oldSize: {x: 0.24, y: 0.31}
     newSize: {x: 0.33, y: 0.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -157,3 +159,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &7387839454456553167
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7067647328132416489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3a890adc75d44400804418c5b6564fb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

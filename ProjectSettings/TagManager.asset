@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - RedCard
+  - YellowCard
+  - GreenCard
   layers:
   - Default
   - TransparentFX

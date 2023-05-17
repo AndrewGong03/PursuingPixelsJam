@@ -25,12 +25,6 @@ public class BallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move towards mvmtDirection
-        transform.position += mvmtDirection * moveSpeed * Time.deltaTime;
-        // Slow down due to friction
-        var frictionDecay = 1 / (1 + friction * Time.deltaTime);
-        moveSpeed *= frictionDecay;
-
         // Bounce off the "walls" (xRange and yRange)
         if (transform.position.x < xRangeMin || transform.position.x > xRangeMax) {
             mvmtDirection.x *= -1 * wallBounciness;
@@ -38,5 +32,11 @@ public class BallScript : MonoBehaviour
         if (transform.position.y < yRangeMin || transform.position.y > yRangeMax) {
             mvmtDirection.y *= -1 * wallBounciness;
         }
+
+        // Move towards mvmtDirection
+        transform.position += mvmtDirection * moveSpeed * Time.deltaTime;
+        // Slow down due to friction
+        var frictionDecay = 1 / (1 + friction * Time.deltaTime);
+        moveSpeed *= frictionDecay;
     }
 }
