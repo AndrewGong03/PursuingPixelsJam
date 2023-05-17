@@ -104,16 +104,16 @@ MonoBehaviour:
   xRangeMin: -2.2
   yRangeMax: 1.8
   yRangeMin: 0.2
-  wanderSpeed: 0.6
+  wanderSpeed: 0.5
   wanderTarget: {x: 0, y: 0, z: 0}
   wanderRadius: 1
   maxWanderTime: 2
   ballChaseRange: 1
   ballChaseSpeed: 1
   ball: {fileID: 0}
-  kickSpeed: 5
+  kickSpeed: 4
   dirtParticles: {fileID: 3384236001129938379, guid: 3219d123589f3419f9336aa0de8633b3, type: 3}
-  dirtParticleDelay: 0.4
+  dirtParticleDelay: 0.5
 --- !u!61 &7067647328132416485
 BoxCollider2D:
   m_ObjectHideFlags: 0
