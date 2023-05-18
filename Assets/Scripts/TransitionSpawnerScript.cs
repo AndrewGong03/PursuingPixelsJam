@@ -9,14 +9,14 @@ public class TransitionSpawnerScript : MonoBehaviour
     public float endTime = 10; // end opening scene
     private float timer = 0; 
     // [SerializeField] private CanvasGroup TransitionGrayGroup;
-    [SerializeField] private Material transparentMaterial; 
+    [SerializeField] private Material transparentMaterial;
+    private float fadeSpeed = 0.005f; // rate of fading
 
     // Start is called before the first frame update
     void Start()
     {
-        // Start opening scene, startTime seconds after game starts
         Invoke("StartGray", startTime); 
-        Invoke("FadeInGray", startTime);
+        StartCoroutine(FadeInGray());
     }
 
     // Update is called once per frame
@@ -25,39 +25,49 @@ public class TransitionSpawnerScript : MonoBehaviour
         // Every time we need to start a scene where people talk, bring up the gray background 
         // Close it when we know it's done 
 
-        // Remove gray background for opening scene
-        if (timer < endTime) 
+        timer += Time.deltaTime;
+
+        if (timer > startTime) 
         {
-            timer = timer + Time.deltaTime; 
-        }
-        else 
-        {
-            FadeOutGray();
+            StartCoroutine(FadeOutGray());
         }
     }
 
-    // Fade in gray background
     public void StartGray()
     {
-        Instantiate(TransitionGray, transform.position, transform.rotation);
+        // Instantiate(TransitionGray, transform.position, transform.rotation);
+        GameObject grayInstance = Instantiate(TransitionGray, transform.position, transform.rotation);
+        Material grayMat = grayInstance.GetComponent<Renderer>().material;
+        Color color = grayMat.color;
+        color.a = 0f; // start transparent
+        grayMat.color = color;
+
+        transparentMaterial = grayMat; // use this material for fading
     }
 
-    public void FadeInGray() 
+    IEnumerator FadeInGray() 
     {
-        // if (TransitionGrayGroup.alpha < 1) 
-        // {
-        //     TransitionGrayGroup.alpha += Time.deltaTime; 
-        // }
+        yield return new WaitForSeconds(startTime); // wait for startTime seconds
 
-        Color color = transparentMaterial.color; 
-        color.a = 1;
-        transparentMaterial.color = color;
+        Color color = transparentMaterial.color;
+        while (color.a < 1) 
+        {
+            color.a += fadeSpeed;
+            transparentMaterial.color = color;
+            yield return null;
+        }
     }
 
-    public void FadeOutGray()
+    IEnumerator FadeOutGray()
     {
+        yield return new WaitForSeconds(endTime); // wait for endTime seconds
+
         Color color = transparentMaterial.color; 
-        color.a = 0;
-        transparentMaterial.color = color;
+        while (color.a > 0)
+        {
+            color.a -= fadeSpeed;
+            transparentMaterial.color = color;
+            yield return null;
+        }
     }
 }
