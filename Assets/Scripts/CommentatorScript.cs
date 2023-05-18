@@ -6,52 +6,32 @@ public class CommentatorScript : MonoBehaviour
 {
     public GameObject chipCorner;
     public GameObject kennyKeeper;
+    public Vector3 targetChipPosition;
+    public Vector3 targetKennyPosition;
     public float initialDelay = 5.0f;
     public float speechDelay = 2.0f;
-    public float speed = 5.0f;
+    public float movementDuration = 2.0f; // the time it takes for the movement
 
-    [SerializeField] private Rigidbody2D chipRb;
-    [SerializeField] private Rigidbody2D kennyRb;
-    [SerializeField] private CommentatorSpeechScript chipSpeechBubble; // assuming you have a SpeechBubble script or class
-    [SerializeField] private CommentatorSpeechScript kennySpeechBubble;
-
-
-    private bool isChipSpeaking = false;
-    private bool isKennySpeaking = false;
+    private CommentatorSpeechScript chipSpeechBubble;
+    private CommentatorSpeechScript kennySpeechBubble;
 
     // Start is called before the first frame update
     void Start()
     {
-        chipRb = chipCorner.GetComponent<Rigidbody2D>();
-        kennyRb = kennyKeeper.GetComponent<Rigidbody2D>();
-
-        chipSpeechBubble = chipCorner.GetComponent<SpeechBubble>();
-        kennySpeechBubble = kennyKeeper.GetComponent<SpeechBubble>();
+        chipSpeechBubble = chipCorner.GetComponent<CommentatorSpeechScript>();
+        kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
 
         StartCoroutine(StartCommentary());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator StartCommentary()
     {
         yield return new WaitForSeconds(initialDelay);
 
-        // Moving Chip from left to right and Kenny from right to left
-        chipRb.velocity = new Vector2(speed, 0);
-        kennyRb.velocity = new Vector2(-speed, 0);
-
-        // Assuming the objects stop at their positions in the frame
-        yield return new WaitUntil(() => chipCorner.transform.position.x >= 0 && kennyKeeper.transform.position.x <= 0);
-        chipRb.velocity = Vector2.zero;
-        kennyRb.velocity = Vector2.zero;
+        yield return MoveToPositions();
 
         // Chip says something
-        chipSpeechBubble.Show("Chip's first speech");
+        chipSpeechBubble.Show("Hello, hello, HELLO! Buckle up, folks, we're about to dive headfirst into a brand new season of football so tantalizing it'll make your taste buds tingle! I'm Chip Corner, your trusty, hyped-up host for this rollercoaster ride, and next to me, the man whose face could stop a clock, Kenny Keeper!");
 
         // Wait for player to press any button and Kenny to respond, repeat 5 times
         for(int i = 0; i < 5; i++)
@@ -69,8 +49,33 @@ public class CommentatorScript : MonoBehaviour
             yield return new WaitForSeconds(speechDelay);
         }
 
-        // Chip and Kenny leave the screen
-        chipRb.velocity = new Vector2(-speed, 0);
-        kennyRb.velocity = new Vector2(speed, 0);
+        // Chip and Kenny leave the screen, you can modify the target positions for exit
+        yield return MoveToPositions(targetChipPosition + new Vector3(-10,0,0), targetKennyPosition + new Vector3(10,0,0));
+    }
+
+    IEnumerator MoveToPositions(Vector3? targetChipPos = null, Vector3? targetKennyPos = null)
+    {
+        float elapsedTime = 0;
+
+        Vector3 chipStartPosition = chipCorner.transform.position;
+        Vector3 kennyStartPosition = kennyKeeper.transform.position;
+
+        Vector3 finalChipPos = targetChipPos ?? targetChipPosition;
+        Vector3 finalKennyPos = targetKennyPos ?? targetKennyPosition;
+
+        while (elapsedTime < movementDuration)
+        {
+            float journeyFraction = elapsedTime / movementDuration;
+
+            chipCorner.transform.position = Vector3.Lerp(chipStartPosition, finalChipPos, journeyFraction);
+            kennyKeeper.transform.position = Vector3.Lerp(kennyStartPosition, finalKennyPos, journeyFraction);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        chipCorner.transform.position = finalChipPos;
+        kennyKeeper.transform.position = finalKennyPos;
     }
 }

@@ -973,7 +973,6 @@ GameObject:
   m_Component:
   - component: {fileID: 917277280}
   - component: {fileID: 917277279}
-  - component: {fileID: 917277282}
   - component: {fileID: 917277281}
   m_Layer: 0
   m_Name: Kenny Keeper
@@ -1042,7 +1041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917277278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0797088, y: 1.1902897, z: 0.032040298}
+  m_LocalPosition: {x: 5, y: 1.19, z: 0}
   m_LocalScale: {x: 3.816022, y: 3.816022, z: 3.816022}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1050,28 +1049,7 @@ Transform:
   m_Father: {fileID: 2056768864}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &917277281
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917277278}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &917277282
+--- !u!114 &917277281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1080,9 +1058,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 917277278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1731bf4551e71465db793639e6d4bea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1972658599}
 --- !u!1 &1000079310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1074,7 @@ GameObject:
   - component: {fileID: 1000079314}
   - component: {fileID: 1000079313}
   - component: {fileID: 1000079312}
+  - component: {fileID: 1000079315}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: Untagged
@@ -1204,6 +1184,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1000079315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000079310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1731bf4551e71465db793639e6d4bea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1834234506}
 --- !u!1 &1064874307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1207,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1064874309}
   - component: {fileID: 1064874308}
-  - component: {fileID: 1064874311}
   - component: {fileID: 1064874310}
   m_Layer: 0
   m_Name: ChipCorner
@@ -1283,7 +1275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064874307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2602911, y: 1.1902897, z: 0.032040298}
+  m_LocalPosition: {x: -4, y: 1.19, z: 0}
   m_LocalScale: {x: 3.816022, y: 3.816022, z: 3.816022}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1291,28 +1283,7 @@ Transform:
   m_Father: {fileID: 2056768864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1064874310
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064874307}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1064874311
+--- !u!114 &1064874310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1321,9 +1292,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064874307}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1731bf4551e71465db793639e6d4bea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1834234506}
 --- !u!1 &1083379233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +1996,7 @@ GameObject:
   - component: {fileID: 1773584738}
   - component: {fileID: 1773584737}
   - component: {fileID: 1773584736}
+  - component: {fileID: 1773584739}
   m_Layer: 0
   m_Name: SpeechBubble
   m_TagString: Untagged
@@ -2069,7 +2042,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2133,6 +2106,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1773584739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773584734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1731bf4551e71465db793639e6d4bea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1972658599}
 --- !u!1 &1825779341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2264,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 8
+    m_FontSize: 4
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2399,7 +2385,7 @@ GameObject:
   - component: {fileID: 1972658598}
   - component: {fileID: 1972658600}
   - component: {fileID: 1972658599}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DisplayText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2448,7 +2434,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
-    m_FontSize: 8
+    m_FontSize: 4
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2562,3 +2548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chipCorner: {fileID: 1064874307}
+  kennyKeeper: {fileID: 917277278}
+  targetChipPosition: {x: -1.8, y: 0.8, z: 0}
+  targetKennyPosition: {x: 1.8, y: 0.8, z: 0}
+  initialDelay: 5
+  speechDelay: 2
+  movementDuration: 2
