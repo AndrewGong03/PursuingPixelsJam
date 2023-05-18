@@ -973,6 +973,8 @@ GameObject:
   m_Component:
   - component: {fileID: 917277280}
   - component: {fileID: 917277279}
+  - component: {fileID: 917277282}
+  - component: {fileID: 917277281}
   m_Layer: 0
   m_Name: Kenny Keeper
   m_TagString: Untagged
@@ -1048,6 +1050,39 @@ Transform:
   m_Father: {fileID: 2056768864}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &917277281
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917277278}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &917277282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917277278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000079310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1214,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1064874309}
   - component: {fileID: 1064874308}
+  - component: {fileID: 1064874311}
+  - component: {fileID: 1064874310}
   m_Layer: 0
   m_Name: ChipCorner
   m_TagString: Untagged
@@ -1254,6 +1291,39 @@ Transform:
   m_Father: {fileID: 2056768864}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1064874310
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064874307}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1064874311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064874307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1083379233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2455,6 +2525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2056768864}
+  - component: {fileID: 2056768865}
   m_Layer: 0
   m_Name: Commentators
   m_TagString: Untagged
@@ -2479,3 +2550,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2056768865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056768863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da5fd2bfa1e4aa699d9eacaecfe6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
