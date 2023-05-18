@@ -48,3 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Very Front
+    uniqueID: 3989571487
+    locked: 0
