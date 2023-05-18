@@ -6,9 +6,8 @@ public class TransitionSpawnerScript : MonoBehaviour
 {
     public GameObject TransitionGray;
     public float startTime = 5; // opening scene
-    public float endTime = 10; // end opening scene
+    public float endTime = 10; // length of opening scene 
     private float timer = 0; 
-    // [SerializeField] private CanvasGroup TransitionGrayGroup;
     [SerializeField] private Material transparentMaterial;
     private float fadeSpeed = 0.005f; // rate of fading
 
@@ -27,7 +26,8 @@ public class TransitionSpawnerScript : MonoBehaviour
 
         timer += Time.deltaTime;
 
-        if (timer > startTime) 
+        // fade out after the opening scene 
+        if (timer > startTime && timer < endTime) 
         {
             StartCoroutine(FadeOutGray());
         }
