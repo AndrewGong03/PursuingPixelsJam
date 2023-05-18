@@ -12,6 +12,7 @@ public class CommentatorScript : MonoBehaviour
     public float speechDelay = 2.0f;
     public float movementDuration = 2.0f; // the time it takes for the movement
 
+
     private CommentatorSpeechScript chipSpeechBubble;
     private CommentatorSpeechScript kennySpeechBubble;
 
@@ -20,9 +21,11 @@ public class CommentatorScript : MonoBehaviour
     {
         chipSpeechBubble = chipCorner.GetComponent<CommentatorSpeechScript>();
         kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
-
+        kennySpeechBubble.Hide();
         StartCoroutine(StartCommentary());
     }
+
+
 
     IEnumerator StartCommentary()
     {
@@ -37,6 +40,7 @@ public class CommentatorScript : MonoBehaviour
         for(int i = 0; i < 5; i++)
         {
             yield return new WaitUntil(() => Input.anyKeyDown);
+            chipSpeechBubble.Hide();
             kennySpeechBubble.Show("Kenny's response " + (i+1));
             yield return new WaitForSeconds(speechDelay);
         }
@@ -44,6 +48,7 @@ public class CommentatorScript : MonoBehaviour
         // Wait for player to press any button and Chip to respond, repeat 5 times
         for(int i = 0; i < 5; i++)
         {
+            kennySpeechBubble.Hide();
             yield return new WaitUntil(() => Input.anyKeyDown);
             chipSpeechBubble.Show("Chip's response " + (i+1));
             yield return new WaitForSeconds(speechDelay);
