@@ -63,7 +63,7 @@ public class TransitionSpawnerScript : MonoBehaviour
         yield return new WaitForSeconds(endTime); // wait for endTime seconds
 
         Color color = transparentMaterial.color; 
-        while (color.a > 0)
+        while (color.a > 0 && color.a <= 1)
         {
             color.a -= fadeSpeed;
             transparentMaterial.color = color;
