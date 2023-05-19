@@ -30,6 +30,9 @@ public class PlayerScript : MonoBehaviour
     public float dirtParticleDelay;
     private float dirtParticleTimer;
 
+    public GameObject chipCorner;
+    public GameObject kennyKeeper;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,15 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if Chip and Kenny are onscreen
+        bool chipOnScreen = IsOnScreen(chipCorner);
+        bool kennyOnScreen = IsOnScreen(kennyKeeper);
+
+        if (chipOnScreen || kennyOnScreen)
+        {
+            return; // Skip movement if Chip or Kenny are onscreen
+        }
+
         // Run at ball if within range
         if (Vector3.Distance(transform.position, ball.transform.position) < ballChaseRange) {
             newTransformPosition = Vector3.MoveTowards(transform.position, ball.transform.position, ballChaseSpeed * Time.deltaTime);
@@ -104,4 +116,15 @@ public class PlayerScript : MonoBehaviour
             ballScript.mvmtDirection = (other.transform.position - this.transform.position).normalized;
         }
     }
+
+    bool IsOnScreen(GameObject gameObject)
+    {
+        Vector3 objectPosition = Camera.main.WorldToViewportPoint(gameObject.transform.position);
+
+        // Check if the object is within the screen boundaries
+        bool isOnScreen = (objectPosition.x > 0 && objectPosition.x < 1 && objectPosition.y > 0 && objectPosition.y < 1);
+
+        return isOnScreen;
+    }
+
 }

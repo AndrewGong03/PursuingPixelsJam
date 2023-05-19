@@ -1663,6 +1663,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7067647328132416486, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
+      propertyPath: chipCorner
+      value: 
+      objectReference: {fileID: 1064874307}
+    - target: {fileID: 7067647328132416486, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
+      propertyPath: kennyKeeper
+      value: 
+      objectReference: {fileID: 917277278}
     - target: {fileID: 7067647328132416487, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1720,6 +1728,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7067647328132416486, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
+      propertyPath: chipCorner
+      value: 
+      objectReference: {fileID: 1064874307}
+    - target: {fileID: 7067647328132416486, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
+      propertyPath: kennyKeeper
+      value: 
+      objectReference: {fileID: 917277278}
     - target: {fileID: 7067647328132416487, guid: fcca142dbd20d44f2925a9fca77cc191, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1932,6 +1948,8 @@ MonoBehaviour:
   friction: 1.8
   wallBounciness: 1.1
   mvmtDirection: {x: 0, y: 0, z: 0}
+  chipCorner: {fileID: 1064874307}
+  kennyKeeper: {fileID: 917277278}
 --- !u!1001 &1670173659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1939,6 +1957,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7067647328132416486, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
+      propertyPath: chipCorner
+      value: 
+      objectReference: {fileID: 1064874307}
+    - target: {fileID: 7067647328132416486, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
+      propertyPath: kennyKeeper
+      value: 
+      objectReference: {fileID: 917277278}
     - target: {fileID: 7067647328132416487, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2452,6 +2478,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7067647328132416486, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
+      propertyPath: chipCorner
+      value: 
+      objectReference: {fileID: 1064874307}
+    - target: {fileID: 7067647328132416486, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
+      propertyPath: kennyKeeper
+      value: 
+      objectReference: {fileID: 917277278}
     - target: {fileID: 7067647328132416487, guid: e6121faac2522479fb51cc20e5eda077, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2670,6 +2704,8 @@ MonoBehaviour:
   startTime: 5
   endTime: 10
   transparentMaterial: {fileID: 2100000, guid: 3437761d6ebbc45b188e18e7b494ab0e, type: 2}
+  chipCorner: {fileID: 1064874307}
+  kennyKeeper: {fileID: 917277278}
 --- !u!4 &2020406680
 Transform:
   m_ObjectHideFlags: 0

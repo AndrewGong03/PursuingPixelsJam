@@ -21,10 +21,10 @@ public class CommentatorScript : MonoBehaviour
     {
         chipSpeechBubble = chipCorner.GetComponent<CommentatorSpeechScript>();
         kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
-        kennySpeechBubble.Hide();
-        StartCoroutine(StartCommentary());
-    }
 
+        StartCoroutine(StartCommentary());
+        
+    }
 
 
     IEnumerator StartCommentary()
@@ -36,13 +36,14 @@ public class CommentatorScript : MonoBehaviour
         // Chip says something
         chipSpeechBubble.Show("Hello, hello, HELLO! Buckle up, folks, we're about to dive headfirst into a brand new season of football so tantalizing it'll make your taste buds tingle! I'm Chip Corner, your trusty, hyped-up host for this rollercoaster ride, and next to me, the man whose face could stop a clock, Kenny Keeper!");
 
+        // TODO: add the actual opening script 
         // Wait for player to press any button and Kenny to respond, repeat 5 times
         for(int i = 0; i < 5; i++)
         {
             yield return new WaitUntil(() => Input.anyKeyDown);
             chipSpeechBubble.Hide();
             kennySpeechBubble.Show("Kenny's response " + (i+1));
-            yield return new WaitForSeconds(speechDelay);
+            // yield return new WaitForSeconds(speechDelay);
         }
 
         // Wait for player to press any button and Chip to respond, repeat 5 times
@@ -51,16 +52,19 @@ public class CommentatorScript : MonoBehaviour
             kennySpeechBubble.Hide();
             yield return new WaitUntil(() => Input.anyKeyDown);
             chipSpeechBubble.Show("Chip's response " + (i+1));
-            yield return new WaitForSeconds(speechDelay);
+            // yield return new WaitForSeconds(speechDelay);
         }
 
         // Chip and Kenny leave the screen, you can modify the target positions for exit
-        yield return MoveToPositions(targetChipPosition + new Vector3(-10,0,0), targetKennyPosition + new Vector3(10,0,0));
+        yield return MoveToPositions(targetChipPosition + new Vector3((float)-5.6,(float)1.19,0), targetKennyPosition + new Vector3((float)6.5,(float)1.19,0));
     }
 
     IEnumerator MoveToPositions(Vector3? targetChipPos = null, Vector3? targetKennyPos = null)
     {
         float elapsedTime = 0;
+
+        kennySpeechBubble.Hide();
+        chipSpeechBubble.Hide();
 
         Vector3 chipStartPosition = chipCorner.transform.position;
         Vector3 kennyStartPosition = kennyKeeper.transform.position;
