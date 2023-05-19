@@ -388,6 +388,7 @@ MonoBehaviour:
   startingY: 0
   targetY: 0
   rising: 0
+  clicked: 0
   riseSpeed: 10
   riseHeight: 0.1
   hitbox: {fileID: 0}
@@ -804,6 +805,7 @@ MonoBehaviour:
   startingY: 0
   targetY: 0
   rising: 0
+  clicked: 0
   riseSpeed: 10
   riseHeight: 0.1
   hitbox: {fileID: 0}
@@ -934,6 +936,7 @@ MonoBehaviour:
   startingY: 0
   targetY: 0
   rising: 0
+  clicked: 0
   riseSpeed: 10
   riseHeight: 0.1
   hitbox: {fileID: 0}
@@ -2706,6 +2709,7 @@ MonoBehaviour:
   transparentMaterial: {fileID: 2100000, guid: 3437761d6ebbc45b188e18e7b494ab0e, type: 2}
   chipCorner: {fileID: 1064874307}
   kennyKeeper: {fileID: 917277278}
+  grayFlag: 0
 --- !u!4 &2020406680
 Transform:
   m_ObjectHideFlags: 0
@@ -2774,3 +2778,10 @@ MonoBehaviour:
   initialDelay: 5
   speechDelay: 2
   movementDuration: 2
+  levelDelay: 3
+  chipSpeechBubble: {fileID: 1000079315}
+  kennySpeechBubble: {fileID: 1773584739}
+  redCard: {fileID: 833713738}
+  yellowCard: {fileID: 803385761}
+  greenCard: {fileID: 345341422}
+  displayText: {fileID: 221676081}

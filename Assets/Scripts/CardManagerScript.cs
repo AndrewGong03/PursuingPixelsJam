@@ -8,6 +8,7 @@ public class CardManagerScript : MonoBehaviour
     public float startingY;
     public float targetY;
     public bool rising;
+    public bool clicked;
     public float riseSpeed;
     public float riseHeight;
     public BoxCollider2D hitbox;
@@ -45,5 +46,10 @@ public class CardManagerScript : MonoBehaviour
         rising = false;
         targetY = startingY;
         hitbox.offset = new Vector2(hitbox.offset.x, 0);
+    }
+
+    void OnMouseDown()
+    {
+        clicked = true;
     }
 }

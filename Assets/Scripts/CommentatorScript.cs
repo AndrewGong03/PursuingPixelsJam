@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CommentatorScript : MonoBehaviour
 {
@@ -8,13 +9,20 @@ public class CommentatorScript : MonoBehaviour
     public GameObject kennyKeeper;
     public Vector3 targetChipPosition;
     public Vector3 targetKennyPosition;
+
     public float initialDelay = 5.0f; // when to start the opening script 
     public float speechDelay = 2.0f;
     public float movementDuration = 2.0f; // the time it takes for the movement
+    public float levelDelay = 3.0f; // when to start next level
 
+    public CommentatorSpeechScript chipSpeechBubble;
+    public CommentatorSpeechScript kennySpeechBubble;
 
-    private CommentatorSpeechScript chipSpeechBubble;
-    private CommentatorSpeechScript kennySpeechBubble;
+    public CardManagerScript redCard;
+    public CardManagerScript yellowCard;
+    public CardManagerScript greenCard;
+
+    public Text displayText; // text next to ref
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +31,6 @@ public class CommentatorScript : MonoBehaviour
         kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
 
         StartCoroutine(StartCommentary());
-        
     }
 
 
@@ -57,6 +64,8 @@ public class CommentatorScript : MonoBehaviour
 
         // Chip and Kenny leave the screen, you can modify the target positions for exit
         yield return MoveToPositions(targetChipPosition + new Vector3((float)-5.6,(float)1.19,0), targetKennyPosition + new Vector3((float)6.5,(float)1.19,0));
+
+        StartCoroutine(Level1A());
     }
 
     IEnumerator MoveToPositions(Vector3? targetChipPos = null, Vector3? targetKennyPos = null)
@@ -86,5 +95,59 @@ public class CommentatorScript : MonoBehaviour
 
         chipCorner.transform.position = finalChipPos;
         kennyKeeper.transform.position = finalKennyPos;
+    }
+
+    IEnumerator Level1A() 
+    {
+        yield return new WaitForSeconds(levelDelay);
+        yield return MoveToPositions();
+
+        // Chip says something
+        chipSpeechBubble.Show("Chip Corner: Oh, look at that! Prince Patrick's gone down in the box, flopping like a fish out of water. I've seen better dives at the kiddie pool!");
+
+        // Wait until user presses a button
+        yield return new WaitUntil(() => Input.anyKeyDown);
+        // yield return new WaitForSeconds(speechDelay); // alternatively wait speechDelay seconds
+
+        // Kenny says something
+        kennySpeechBubble.Show("Kenny Keeper: This is the moment of truth. Does our ref fall for the royal performance, or does he play the role of a heartless critic?");
+        
+        // Keep commentators on screen and handle player input
+        while (true)
+        {
+            // player input options for the ref's speech bubble
+            if (redCard.rising) {
+                displayText.text = "Penalty for Royal United!";
+            }
+            else if (yellowCard.rising) {
+                displayText.text = "Warning for Prince Patrick!";
+            }
+            else if (greenCard.rising) {
+                displayText.text = "Nothing wrong here!";
+            }
+            else {
+                displayText.text = "";
+            }
+            
+            // Check for player input
+            if (Input.GetMouseButtonDown(0)) // Left mouse button clicked
+            {
+                if (redCard.clicked) {
+                    displayText.text = "red card clicked placeholder";
+                }
+                else if (yellowCard.rising) {
+                    displayText.text = "yellow card clicked placeholder";
+                    kennySpeechBubble.Show("Kenny Keeper: The ref saw through the act and rightly gave Patrick a yellow card!");
+                    chipSpeechBubble.Hide();
+                }
+                else if (greenCard.rising) {
+                    displayText.text = "green card clicked placeholder";
+                    chipSpeechBubble.Show("Chip Corner: Patrick got away with it! The ref seems to have fallen for his theatrics!");
+                    kennySpeechBubble.Hide();
+                }
+            }
+
+            yield return null;
+        }
     }
 }
