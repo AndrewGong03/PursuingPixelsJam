@@ -14,13 +14,12 @@ public class TransitionSpawnerScript : MonoBehaviour
     public GameObject chipCorner;
     public GameObject kennyKeeper;
 
-    public int grayFlag; 
+    public int grayFlag; // check if gray background is already active 
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("StartGray", startTime); 
-        // StartCoroutine(FadeInGray());
     }
 
     // Update is called once per frame
@@ -47,17 +46,10 @@ public class TransitionSpawnerScript : MonoBehaviour
                 StartCoroutine(FadeOutGray());
             }
         }
-
-        // fade out after the opening scene 
-        // if (timer > startTime && timer < endTime) 
-        // {
-        //     StartCoroutine(FadeOutGray());
-        // }
     }
 
     public void StartGray()
     {
-        // Instantiate(TransitionGray, transform.position, transform.rotation);
         GameObject grayInstance = Instantiate(TransitionGray, transform.position, transform.rotation);
         Material grayMat = grayInstance.GetComponent<Renderer>().material;
         Color color = grayMat.color;
@@ -70,7 +62,6 @@ public class TransitionSpawnerScript : MonoBehaviour
     IEnumerator FadeInGray() 
     {
         grayFlag = 1;
-        // yield return new WaitForSeconds(startTime); // wait for startTime seconds
 
         Color color = transparentMaterial.color;
         while (color.a < 1) 
@@ -84,7 +75,6 @@ public class TransitionSpawnerScript : MonoBehaviour
     IEnumerator FadeOutGray()
     {
         grayFlag = 0;
-        // yield return new WaitForSeconds(endTime); // wait for endTime seconds
 
         Color color = transparentMaterial.color; 
         while (color.a > 0)
