@@ -8,7 +8,7 @@ public class CommentatorScript : MonoBehaviour
     public GameObject kennyKeeper;
     public Vector3 targetChipPosition;
     public Vector3 targetKennyPosition;
-    public float initialDelay = 5.0f;
+    public float initialDelay = 5.0f; // when to start the opening script 
     public float speechDelay = 2.0f;
     public float movementDuration = 2.0f; // the time it takes for the movement
 
@@ -42,7 +42,7 @@ public class CommentatorScript : MonoBehaviour
         {
             yield return new WaitUntil(() => Input.anyKeyDown);
             chipSpeechBubble.Hide();
-            kennySpeechBubble.Show("Kenny's response " + (i+1));
+            kennySpeechBubble.Show("Opening Script. Kenny's response " + (i+1));
             // yield return new WaitForSeconds(speechDelay);
         }
 
@@ -51,7 +51,7 @@ public class CommentatorScript : MonoBehaviour
         {
             kennySpeechBubble.Hide();
             yield return new WaitUntil(() => Input.anyKeyDown);
-            chipSpeechBubble.Show("Chip's response " + (i+1));
+            chipSpeechBubble.Show("Opening Script. Chip's response " + (i+1));
             // yield return new WaitForSeconds(speechDelay);
         }
 
