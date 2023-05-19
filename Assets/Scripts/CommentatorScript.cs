@@ -63,7 +63,7 @@ public class CommentatorScript : MonoBehaviour
         }
 
         // Chip and Kenny leave the screen, you can modify the target positions for exit
-        yield return MoveToPositions(targetChipPosition + new Vector3((float)-5.6,(float)1.19,0), targetKennyPosition + new Vector3((float)6.5,(float)1.19,0));
+        yield return MoveToPositions(targetChipPosition + new Vector3(-5.6f,1.19f,0), targetKennyPosition + new Vector3(6.5f,1.19f,0));
 
         StartCoroutine(Level1A());
     }

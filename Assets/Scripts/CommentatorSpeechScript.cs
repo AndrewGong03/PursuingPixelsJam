@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CommentatorSpeechScript : MonoBehaviour
 {
-    public Text DisplayText; // drag your DisplayText component here in the inspector
+    public Text DisplayText; // drag DisplayText component here in the inspector
     public GameObject speechBubble;
 
     public void Show(string text)

@@ -7,7 +7,6 @@ public class TransitionSpawnerScript : MonoBehaviour
     public GameObject TransitionGray;
     public float startTime = 5; // opening scene
     public float endTime = 10; // length of opening scene 
-    private float timer = 0; 
     [SerializeField] private Material transparentMaterial;
     private float fadeSpeed = 0.005f; // rate of fading
 
