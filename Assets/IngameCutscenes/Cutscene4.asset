@@ -15,10 +15,10 @@ MonoBehaviour:
   dialogueLines:
   - We've got a full-blown food fight on our hands, folks! Brawlers' fans are tossing
     their hot dogs and nachos like they're in a school cafeteria!
-  - Ref's got a real snack attack to deal with. Does he call for a time-out clean-up,
-    let the game turn into a dodge-the-dinner event, or sample the field cuisine
-    himself for laughs?
-  speakerOrder: 0200000001000000
+  - Ref's got a real snack attack to deal with.
+  - Does he call for a time-out clean-up, let the game turn into a dodge-the-dinner
+    event, or sample the field cuisine himself for laughs?
+  speakerOrder: 020000000100000001000000
   hasChoices: 1
   infoText: Brawler FC fans are throwing food. How do you respond?
   redCardText:

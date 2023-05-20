@@ -49,7 +49,7 @@ public class TransitionSpawnerScript : MonoBehaviour
 
     public IEnumerator FadeInGrayBottomHalf()
     {
-                Vector3 targetPosition = transform.position;
+        Vector3 targetPosition = transform.position;
         while (targetPosition.y > 0) {
             targetPosition.y -= fadeSpeed;
             transform.position = targetPosition;

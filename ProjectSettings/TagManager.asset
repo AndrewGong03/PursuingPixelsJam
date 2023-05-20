@@ -8,6 +8,8 @@ TagManager:
   - RedCard
   - YellowCard
   - GreenCard
+  - LeftGoal
+  - RightGoal
   layers:
   - Default
   - TransparentFX

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: Cutscene5
   m_EditorClassIdentifier: 
   dialogueLines:
-  - Woah! Prince Patrick just fired that ball at the ref like he's the star of a
-    cannon show! Guess he's not just a player, he's also a part-time artilleryman!
+  - 'Woah! Prince Patrick just fired that ball at the ref like he''s the star of
+    a cannon show! '
+  - Guess he's not just a player, he's also a part-time artilleryman!
   - Interesting position for our ref. Does he flash the yellow, treat it like a harmless
     prank, or fire one back at the Prince?
-  speakerOrder: 0100000002000000
+  speakerOrder: 010000000100000002000000
   hasChoices: 1
   infoText: How do you respond to Prince Patrick's shot?
   redCardText:

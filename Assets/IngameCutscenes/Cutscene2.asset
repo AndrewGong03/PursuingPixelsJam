@@ -23,13 +23,13 @@ MonoBehaviour:
     Patrick? '
   redCardText:
   - Red card for the tackler
-  - '[Placeholder]'
+  - A harsh response for a harsh tackle.
   yellowCardText:
   - Yellow card for the tackler
-  - '[Placeholder]'
+  - The ref reasonably gives him a penalty.
   greenCardText:
   - Ignore the tackle
-  - '[Placeholder]'
+  - This ref really must be blind to have missed that!
   pointIfRed: 0000000000000000f6ffffff01000000
   pointIfYellow: 00000000000000000000000001000000
   pointIfGreen: 0000000000000000f6ffffffffffffff

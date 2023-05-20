@@ -54,6 +54,8 @@ public class CardManagerScript : MonoBehaviour
 
     void OnMouseDown()
     {
-        clicked = true;
+        if (IngameCutsceneManagerScript.isCheckingCards) {
+            clicked = true;
+        }
     }
 }

@@ -14,11 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueLines:
   - Well, well, well. Royal United's dog mascot is getting a little too friendly
-    with the Brawlers' players! I've heard of leg humpers, but this is next level!
-  - Our ref's got a peculiar problem to handle. Does he send the overly affectionate
-    pooch packing, let the love fest continue, or don the spare mascot head and join
-    the fun?
-  speakerOrder: 0100000002000000
+    with the Brawlers' players!
+  - ' I''ve heard of leg humpers, but this is next level!'
+  - Our ref's got a peculiar problem to handle.
+  - Does he send the overly affectionate pooch packing, let the love fest continue,
+    or don the spare mascot head and join the fun?
+  speakerOrder: 01000000010000000200000002000000
   hasChoices: 1
   infoText: "Royal United\u2019s Mascot is making rude gestures. How will you respond?"
   redCardText:
