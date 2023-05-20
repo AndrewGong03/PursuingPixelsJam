@@ -31,12 +31,27 @@ public class IngameCutsceneManagerScript : MonoBehaviour
 
     public float exitDelay = 0.5f; // how long it'll linger on the last dialogue before ending the cutscene
 
+    public int sceneCount = 5; // number of scenes, indexed at 1
+    public int sceneCounter = 1;
+
     // Start is called before the first frame update
     void Start()
     {
         isInCutscene = false;
         isCheckingCards = false;
         StartCutscene(cutsceneArray[0]);
+    }
+
+    void Update()
+    {
+        Debug.Log(sceneCounter);
+        Debug.Log(sceneCount);
+        if (sceneCounter < sceneCount && !isInCutscene) 
+        {
+            Debug.Log(sceneCounter);
+            StartCutscene(cutsceneArray[sceneCounter]);
+            sceneCounter += 1;
+        }
     }
 
     public void StartCutscene(IngameCutsceneScriptableObject cutscene) {

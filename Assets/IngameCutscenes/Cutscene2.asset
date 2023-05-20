@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene2
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Holy guacamole! That tackle from the Brawler was rougher than sandpaper on a
+    sunburn! Looked more like a wrestling move to me.
+  - Looks like our ref's got to make a decision. Does he paint the town yellow, turn
+    a blind eye, or lay down the law for the whole Brawlers squad?
+  speakerOrder: 0200000001000000
+  hasChoices: 1
+  infoText: 'How will you respond to Brad Punchson of Brawlers FC tackling Prince
+    Patrick? '
+  redCardText:
+  - Red card for the tackler
+  - '[Placeholder]'
+  yellowCardText:
+  - Yellow card for the tackler
+  - '[Placeholder]'
+  greenCardText:
+  - Ignore the tackle
+  - '[Placeholder]'
+  pointIfRed: 0000000000000000f6ffffff01000000
+  pointIfYellow: 00000000000000000000000001000000
+  pointIfGreen: 0000000000000000f6ffffffffffffff
+  teamCode: 0

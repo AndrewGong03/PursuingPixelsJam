@@ -2014,6 +2014,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneArray:
   - {fileID: 11400000, guid: bc23a3c2a90b04fd09f141196cdb00ba, type: 2}
+  - {fileID: 11400000, guid: 0c28b68a193b445acab6898595659cc4, type: 2}
+  - {fileID: 11400000, guid: d10c42435ae0e4654bee3cbffd05e998, type: 2}
+  - {fileID: 11400000, guid: 6615acb64eb7240eb9c8c4c6bf32c13d, type: 2}
+  - {fileID: 11400000, guid: 932a26fa8bfd548d9ba44b737bbe3261, type: 2}
   currentCutscene: {fileID: 0}
   chipCorner: {fileID: 1064874307}
   kennyKeeper: {fileID: 917277278}
@@ -2029,6 +2033,8 @@ MonoBehaviour:
   refText: {fileID: 221676081}
   grayTransition: {fileID: 228683881}
   exitDelay: 0.5
+  sceneCount: 5
+  sceneCounter: 1
 --- !u!4 &1381143274
 Transform:
   m_ObjectHideFlags: 0
