@@ -30,3 +30,6 @@ MonoBehaviour:
   - Call out Prince Patrick for his theatrics
   - The ref isn't standing for Prince Patrick's shenanigans. I hear the crowd cheering
     on his decision!
+  pointIfRed: 0300000000000000
+  pointIfYellow: 0200000000000000
+  pointIfGreen: 010000000a000000

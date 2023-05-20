@@ -31,7 +31,6 @@ public class IngameCutsceneManagerScript : MonoBehaviour
 
     public float exitDelay = 0.5f; // how long it'll linger on the last dialogue before ending the cutscene
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -102,18 +101,26 @@ public class IngameCutsceneManagerScript : MonoBehaviour
                 if (redCard.clicked) {
                     chipSpeechBubble.Show(currentCutscene.redCardText[1]);
                     cardClicked = true;
+                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfRed[0]);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfRed[1]);
                 }
                 else if (yellowCard.clicked) {
                     chipSpeechBubble.Show(currentCutscene.yellowCardText[1]);
                     cardClicked = true;
+                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfYellow[0]);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfYellow[1]);
                 }
                 else if (greenCard.clicked) {
                     chipSpeechBubble.Show(currentCutscene.greenCardText[1]);
                     cardClicked = true;
+                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfGreen[0]);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfGreen[1]);
                 }
                 else {
                     infoText.text = "";
                 }
+
+                Debug.Log(ScoreScript.pop); // debugging purposes only 
             }
         }
 

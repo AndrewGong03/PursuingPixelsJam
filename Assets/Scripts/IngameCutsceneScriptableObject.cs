@@ -17,6 +17,13 @@ public class IngameCutsceneScriptableObject : ScriptableObject
     public string[] yellowCardText;
     public string[] greenCardText;
 
+    // Index 0: money value change if ref clicks red/yellow/green card 
+    // Index 1: popularity value change 
+    // still need to implement win score for team, credibility for team 
+    public int[] pointIfRed; 
+    public int[] pointIfYellow; 
+    public int[] pointIfGreen;
+
     // Start is called before the first frame update
     void Start()
     {
