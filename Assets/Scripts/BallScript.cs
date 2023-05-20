@@ -29,15 +29,10 @@ public class BallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if Chip and Kenny are onscreen
-        bool chipOnScreen = IsOnScreen(chipCorner);
-        bool kennyOnScreen = IsOnScreen(kennyKeeper);
-
-        if (chipOnScreen || kennyOnScreen)
-        {
-            moveSpeed = 0; // Stop ball if on screen
-        } 
-
+        if (CutsceneManagerScript.isInCutscene) { // Stop moving during cutscenes
+            moveSpeed = 0;
+            return;
+        }
         /* original code, in case I fucked anything up. New code should try to prevent ball going out of bounds
         // Bounce off the "walls" (xRange and yRange)
         if (transform.position.x < xRangeMin || transform.position.x > xRangeMax) {
@@ -79,15 +74,5 @@ public class BallScript : MonoBehaviour
         // Slow down due to friction
         var frictionDecay = 1 / (1 + friction * Time.deltaTime);
         moveSpeed *= frictionDecay;
-    }
-
-    bool IsOnScreen(GameObject gameObject)
-    {
-        Vector3 objectPosition = Camera.main.WorldToViewportPoint(gameObject.transform.position);
-
-        // Check if the object is within the screen boundaries
-        bool isOnScreen = (objectPosition.x > 0 && objectPosition.x < 1 && objectPosition.y > 0 && objectPosition.y < 1);
-
-        return isOnScreen;
     }
 }

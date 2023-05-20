@@ -4,64 +4,30 @@ using UnityEngine;
 
 public class TransitionSpawnerScript : MonoBehaviour
 {
-    public GameObject TransitionGray;
-    public float startTime = 5; // opening scene
-    public float endTime = 10; // length of opening scene 
     [SerializeField] private Material transparentMaterial;
     private float fadeSpeed = 0.005f; // rate of fading
-
-    public GameObject chipCorner;
-    public GameObject kennyKeeper;
-
-    public int grayFlag; // check if gray background is already active 
+    private float halfTheScreenY = 2.13f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("StartGray", startTime); 
+        StartGray();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Every time we need to start a scene where people talk, bring up the gray background 
-        // Close it when we know it's done 
-
-        // Check if Chip and Kenny are onscreen
-        bool chipOnScreen = IsOnScreen(chipCorner);
-        bool kennyOnScreen = IsOnScreen(kennyKeeper);
-
-        if (grayFlag == 0) 
-        {
-            if (chipOnScreen || kennyOnScreen) 
-            {
-                StartCoroutine(FadeInGray()); // Fade in gray if Chip or Kenny are onscreen
-            } 
-        }        
-        else 
-        {   
-            if (!chipOnScreen && !kennyOnScreen) 
-            {
-                StartCoroutine(FadeOutGray());
-            }
-        }
     }
 
     public void StartGray()
     {
-        GameObject grayInstance = Instantiate(TransitionGray, transform.position, transform.rotation);
-        Material grayMat = grayInstance.GetComponent<Renderer>().material;
-        Color color = grayMat.color;
-        color.a = 0f; // start transparent
-        grayMat.color = color;
-
-        transparentMaterial = grayMat; // use this material for fading
+        Color transparent = transparentMaterial.color;
+        transparent.a = 0f;
+        transparentMaterial.color = transparent;
     }
 
-    IEnumerator FadeInGray() 
+    public IEnumerator FadeInGrayWholeScreen() 
     {
-        grayFlag = 1;
-
         Color color = transparentMaterial.color;
         while (color.a < 1) 
         {
@@ -71,10 +37,28 @@ public class TransitionSpawnerScript : MonoBehaviour
         }
     }
 
-    IEnumerator FadeOutGray()
+    public IEnumerator FadeOutGrayBottomHalf()
     {
-        grayFlag = 0;
+        Vector3 targetPosition = transform.position;
+        while (targetPosition.y < halfTheScreenY) {
+            targetPosition.y += fadeSpeed;
+            transform.position = targetPosition;
+            yield return null;
+        }
+    }
 
+    public IEnumerator FadeInGrayBottomHalf()
+    {
+                Vector3 targetPosition = transform.position;
+        while (targetPosition.y > 0) {
+            targetPosition.y -= fadeSpeed;
+            transform.position = targetPosition;
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeOutGrayWholeScreen()
+    {
         Color color = transparentMaterial.color; 
         while (color.a > 0)
         {
@@ -83,14 +67,6 @@ public class TransitionSpawnerScript : MonoBehaviour
             yield return null;
         }
     }
-
-    bool IsOnScreen(GameObject gameObject)
-    {
-        Vector3 objectPosition = Camera.main.WorldToViewportPoint(gameObject.transform.position);
-
-        // Check if the object is within the screen boundaries
-        bool isOnScreen = (objectPosition.x > 0 && objectPosition.x < 1 && objectPosition.y > 0 && objectPosition.y < 1);
-
-        return isOnScreen;
-    }
+    
+    
 }

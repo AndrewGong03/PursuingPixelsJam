@@ -45,13 +45,8 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check if Chip and Kenny are onscreen
-        bool chipOnScreen = IsOnScreen(chipCorner);
-        bool kennyOnScreen = IsOnScreen(kennyKeeper);
-
-        if (chipOnScreen || kennyOnScreen)
-        {
-            return; // Skip movement if Chip or Kenny are onscreen
+        if (CutsceneManagerScript.isInCutscene) { // Stop moving during cutscenes
+            return;
         }
 
         // Run at ball if within range

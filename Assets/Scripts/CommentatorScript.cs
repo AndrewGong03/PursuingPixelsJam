@@ -9,6 +9,7 @@ public class CommentatorScript : MonoBehaviour
     public GameObject kennyKeeper;
     public Vector3 targetChipPosition;
     public Vector3 targetKennyPosition;
+    public TransitionSpawnerScript grayTransition;
 
     public float initialDelay = 5.0f; // when to start the opening script 
     public float speechDelay = 2.0f;
@@ -29,7 +30,7 @@ public class CommentatorScript : MonoBehaviour
     {
         chipSpeechBubble = chipCorner.GetComponent<CommentatorSpeechScript>();
         kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
-
+        
         StartCoroutine(StartCommentary());
     }
 

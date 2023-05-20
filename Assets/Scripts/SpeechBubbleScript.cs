@@ -20,13 +20,13 @@ public class SpeechBubbleScript : MonoBehaviour
     void Update()
     {
         if (redCard.rising) {
-            displayText.text = "You're OUT!";
+            displayText.text = "";
         }
         else if (yellowCard.rising) {
-            displayText.text = "Penalty!";
+            displayText.text = "";
         }
         else if (greenCard.rising) {
-            displayText.text = "Nothing wrong here!";
+            displayText.text = "";
         }
         else {
             displayText.text = "";

@@ -33,6 +33,10 @@ public class CardManagerScript : MonoBehaviour
     void OnMouseEnter() 
     {
         rising = true;
+
+        if (!CutsceneManagerScript.isCheckingCards) { // Stop moving during cutscenes
+            rising = false;
+        }
     }
 
     void OnMouseOver() {

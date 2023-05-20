@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CutsceneManagerScript : MonoBehaviour
 {
+    public static bool isInCutscene;
+    public static bool isCheckingCards;
+    public IngameCutsceneScriptableObject[] cutsceneArray;
     public IngameCutsceneScriptableObject currentCutscene;
     public GameObject chipCorner;
     public GameObject kennyKeeper;
@@ -20,42 +23,111 @@ public class CutsceneManagerScript : MonoBehaviour
     public CardManagerScript yellowCard;
     public CardManagerScript greenCard;
 
-    public Text displayText; // text next to ref
+    public Text infoText; // text above cards
+    public Text refText; // text next to ref
+    public TransitionSpawnerScript grayTransition;
+
+    private bool cardClicked = false;
+
+    public float exitDelay = 0.5f; // how long it'll linger on the last dialogue before ending the cutscene
+
 
     // Start is called before the first frame update
     void Start()
     {
-        chipSpeechBubble = chipCorner.GetComponent<CommentatorSpeechScript>();
-        kennySpeechBubble = kennyKeeper.GetComponent<CommentatorSpeechScript>();
+        isInCutscene = false;
+        isCheckingCards = false;
+        StartCutscene(cutsceneArray[0]);
     }
 
     public void StartCutscene(IngameCutsceneScriptableObject cutscene) {
+        isInCutscene = true;
         currentCutscene = cutscene;
-        StartCoroutine(StartCommentary());
+        cardClicked = false;
+        StartCoroutine(grayTransition.FadeInGrayWholeScreen());
+        StartCoroutine(PlayCutscene());
     }
 
 
-    IEnumerator StartCommentary()
+    IEnumerator PlayCutscene()
     {
         yield return MoveToPositions();
 
         for (int i = 0; i < currentCutscene.dialogueLines.Length; i++) {
             if (currentCutscene.speakerOrder[i] == 1) {
                 chipSpeechBubble.Show(currentCutscene.dialogueLines[i]);
-                yield return new WaitUntil(() => Input.anyKeyDown);
+                yield return WaitForNextKeyPress();
                 chipSpeechBubble.Hide();
             }
             else if (currentCutscene.speakerOrder[i] == 2) {
                 kennySpeechBubble.Show(currentCutscene.dialogueLines[i]);
-                yield return new WaitUntil(() => Input.anyKeyDown);
+                yield return WaitForNextKeyPress();
                 kennySpeechBubble.Hide();
             }
         }
 
-        // Chip and Kenny leave the screen, you can modify the target positions for exit
-        yield return MoveToPositions(targetChipPosition + new Vector3(-5.6f,1.19f,0), targetKennyPosition + new Vector3(6.5f,1.19f,0));
+        if (currentCutscene.hasChoices) {
+            isCheckingCards = true;
+            StartCoroutine(grayTransition.FadeOutGrayBottomHalf());
+            StartCoroutine(CheckCards());
+        }
+    }
 
-        //
+    IEnumerator CheckCards() {
+        while (!cardClicked) {
+            yield return null;
+
+            infoText.text = currentCutscene.infoText;
+            
+            // check the status of the cards
+            if (redCard.rising)
+            {
+                refText.text = currentCutscene.redCardText[0];
+            }
+            else if (yellowCard.rising)
+            {
+                refText.text = currentCutscene.yellowCardText[0];
+            }
+            else if (greenCard.rising)
+            {
+                refText.text = currentCutscene.greenCardText[0];
+            }
+            else
+            {
+                refText.text = "";
+            }
+
+            if (Input.GetMouseButtonDown(0)) // Left mouse button clicked
+            {
+                if (redCard.clicked) {
+                    chipSpeechBubble.Show(currentCutscene.redCardText[1]);
+                    cardClicked = true;
+                }
+                else if (yellowCard.clicked) {
+                    chipSpeechBubble.Show(currentCutscene.yellowCardText[1]);
+                    cardClicked = true;
+                }
+                else if (greenCard.clicked) {
+                    chipSpeechBubble.Show(currentCutscene.greenCardText[1]);
+                    cardClicked = true;
+                }
+                else {
+                    infoText.text = "";
+                }
+            }
+        }
+
+        StartCoroutine(ExitCutscene());
+    }
+
+    IEnumerator ExitCutscene() {
+        isCheckingCards = false;
+        infoText.text = "";
+        yield return new WaitForSeconds(exitDelay);
+        yield return WaitForNextKeyPress();
+        StartCoroutine(grayTransition.FadeOutGrayWholeScreen());
+        yield return MoveToPositions(targetChipPosition + new Vector3(-5.6f,1.19f,0), targetKennyPosition + new Vector3(6.5f,1.19f,0));
+        isInCutscene = false;
     }
 
     IEnumerator MoveToPositions(Vector3? targetChipPos = null, Vector3? targetKennyPos = null)
@@ -85,5 +157,33 @@ public class CutsceneManagerScript : MonoBehaviour
 
         chipCorner.transform.position = finalChipPos;
         kennyKeeper.transform.position = finalKennyPos;
+    }
+
+    private IEnumerator WaitForNextKeyPress()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.anyKeyDown)
+            {
+                done = true;
+            }
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator WaitForNextMouseDown()
+    {
+        bool done = false;
+        while (!done)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                done = true;
+            }
+
+            yield return null;
+        }
     }
 }
