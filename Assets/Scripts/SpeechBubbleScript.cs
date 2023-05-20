@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class SpeechBubbleScript : MonoBehaviour
 {
-    public CardManagerScript redCard;
-    public CardManagerScript yellowCard;
-    public CardManagerScript greenCard;
+    public SpriteRenderer speechBubbleSprite;
     public Text displayText;
 
 
@@ -19,17 +17,6 @@ public class SpeechBubbleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (redCard.rising) {
-            displayText.text = "";
-        }
-        else if (yellowCard.rising) {
-            displayText.text = "";
-        }
-        else if (greenCard.rising) {
-            displayText.text = "";
-        }
-        else {
-            displayText.text = "";
-        }
+        speechBubbleSprite.enabled = IngameCutsceneManagerScript.isCheckingCards;
     }
 }

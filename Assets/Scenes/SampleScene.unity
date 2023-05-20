@@ -194,7 +194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &221676082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1482,9 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3a93b4366e640b0b751f9804be891a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redCard: {fileID: 833713738}
-  yellowCard: {fileID: 803385761}
-  greenCard: {fileID: 345341422}
+  speechBubbleSprite: {fileID: 1083379235}
   displayText: {fileID: 221676081}
 --- !u!224 &1083379237
 RectTransform:
@@ -1879,7 +1877,7 @@ GameObject:
   - component: {fileID: 1381143274}
   - component: {fileID: 1381143273}
   m_Layer: 0
-  m_Name: CutsceneManager
+  m_Name: IngameCutsceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1894,7 +1892,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1381143272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00c85106e4d3c4f209515a7f7b62daa5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8710a957e9e464e7b8bf7308ea23e782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneArray:

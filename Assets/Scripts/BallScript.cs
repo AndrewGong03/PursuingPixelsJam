@@ -29,7 +29,7 @@ public class BallScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CutsceneManagerScript.isInCutscene) { // Stop moving during cutscenes
+        if (IngameCutsceneManagerScript.isInCutscene) { // Stop moving during cutscenes
             moveSpeed = 0;
             return;
         }

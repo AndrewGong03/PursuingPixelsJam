@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CutsceneManagerScript : MonoBehaviour
+public class IngameCutsceneManagerScript : MonoBehaviour
 {
     public static bool isInCutscene;
     public static bool isCheckingCards;
@@ -122,6 +122,7 @@ public class CutsceneManagerScript : MonoBehaviour
 
     IEnumerator ExitCutscene() {
         isCheckingCards = false;
+        refText.text = "";
         infoText.text = "";
         yield return new WaitForSeconds(exitDelay);
         yield return WaitForNextKeyPress();

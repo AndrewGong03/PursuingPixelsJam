@@ -34,7 +34,7 @@ public class CardManagerScript : MonoBehaviour
     {
         rising = true;
 
-        if (!CutsceneManagerScript.isCheckingCards) { // Stop moving during cutscenes
+        if (!IngameCutsceneManagerScript.isCheckingCards) { // Stop moving during cutscenes
             rising = false;
         }
     }
