@@ -103,24 +103,32 @@ public class IngameCutsceneManagerScript : MonoBehaviour
                     cardClicked = true;
                     ScoreScript.instance.ChangeMoney(currentCutscene.pointIfRed[0]);
                     ScoreScript.instance.ChangePop(currentCutscene.pointIfRed[1]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfRed[2]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfRed[3], currentCutscene.teamCode);
                 }
                 else if (yellowCard.clicked) {
                     chipSpeechBubble.Show(currentCutscene.yellowCardText[1]);
                     cardClicked = true;
                     ScoreScript.instance.ChangeMoney(currentCutscene.pointIfYellow[0]);
                     ScoreScript.instance.ChangePop(currentCutscene.pointIfYellow[1]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfYellow[2]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfYellow[3], currentCutscene.teamCode);
                 }
                 else if (greenCard.clicked) {
                     chipSpeechBubble.Show(currentCutscene.greenCardText[1]);
                     cardClicked = true;
                     ScoreScript.instance.ChangeMoney(currentCutscene.pointIfGreen[0]);
                     ScoreScript.instance.ChangePop(currentCutscene.pointIfGreen[1]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfGreen[2]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfGreen[3], currentCutscene.teamCode);
                 }
                 else {
                     infoText.text = "";
                 }
 
                 Debug.Log(ScoreScript.pop); // debugging purposes only 
+                Debug.Log(ScoreScript.cred);
+                Debug.Log(ScoreScript.winScore[currentCutscene.teamCode]);
             }
         }
 

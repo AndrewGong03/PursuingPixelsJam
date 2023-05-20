@@ -14,17 +14,14 @@ public class ScoreScript : MonoBehaviour
     // 2) Popularity 
     public static int pop = 0;
 
-    // 3) Win score for each team, only want to change score of team playing rn 
+    // 3) Credibility
+    public static int cred = 0; 
+
+    // 4) Win score for each team, only want to change score of team playing rn 
     // a) League "Royal United" 
     // b) Underdog 
     // c) Drug Cartel 
-
-
-    // 4) Credibility with each team, just sum of "win scores" for that team 
-    // a) League "Royal United" 
-    // b) Underdog 
-    // c) Drug Cartel 
-
+    public static int[] winScore = new int[3] {0,0,0};
 
     private void Awake()
     {
@@ -45,5 +42,15 @@ public class ScoreScript : MonoBehaviour
     public void ChangePop(int popChange) 
     {
         pop += popChange; 
+    }
+
+    public void ChangeCred(int credChange) 
+    {
+        cred += credChange; 
+    }
+
+    public void ChangeWin(int winChange, int teamCode) 
+    {
+        winScore[teamCode] += winChange;
     }
 }
