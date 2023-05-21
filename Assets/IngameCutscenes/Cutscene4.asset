@@ -31,6 +31,6 @@ MonoBehaviour:
   - "Free food? I\u2019ll take some."
   - And the ref starts eating the food!? Are their salaries really that low?
   pointIfRed: 000000000100000001000000
-  pointIfYellow: 0000000000000000ffffffffffffffff
-  pointIfGreen: 000000000a000000ffffffffffffffff
+  pointIfYellow: 00000000ffffffffffffffff
+  pointIfGreen: 01000000ffffffffffffffff
   teamCode: 0

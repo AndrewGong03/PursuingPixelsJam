@@ -12,6 +12,7 @@ public class CardManagerScript : MonoBehaviour
     public float riseSpeed;
     public float riseHeight;
     public BoxCollider2D hitbox;
+    public AudioClip cardSound;
 
     // Start is called before the first frame update
     void Start()
@@ -32,10 +33,12 @@ public class CardManagerScript : MonoBehaviour
 
     void OnMouseEnter() 
     {
-        rising = true;
-
         if (!IngameCutsceneManagerScript.isCheckingCards) { // Stop moving during cutscenes
             rising = false;
+        }
+        else {
+            rising = true;
+            AudioManagerScript.Instance.Play(cardSound, 1f);
         }
     }
 

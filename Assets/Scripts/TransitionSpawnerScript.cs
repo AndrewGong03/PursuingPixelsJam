@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransitionSpawnerScript : MonoBehaviour
 {
     [SerializeField] private Material transparentMaterial;
-    private float fadeSpeed = 0.005f; // rate of fading
+    private float fadeSpeed = 4f; // rate of fading
     private float halfTheScreenY = 2.13f;
 
     // Start is called before the first frame update
@@ -31,7 +31,7 @@ public class TransitionSpawnerScript : MonoBehaviour
         Color color = transparentMaterial.color;
         while (color.a < 1) 
         {
-            color.a += fadeSpeed;
+            color.a += fadeSpeed * Time.deltaTime;
             transparentMaterial.color = color;
             yield return null;
         }
@@ -41,7 +41,7 @@ public class TransitionSpawnerScript : MonoBehaviour
     {
         Vector3 targetPosition = transform.position;
         while (targetPosition.y < halfTheScreenY) {
-            targetPosition.y += fadeSpeed;
+            targetPosition.y += fadeSpeed * Time.deltaTime;
             transform.position = targetPosition;
             yield return null;
         }
@@ -51,7 +51,7 @@ public class TransitionSpawnerScript : MonoBehaviour
     {
         Vector3 targetPosition = transform.position;
         while (targetPosition.y > 0) {
-            targetPosition.y -= fadeSpeed;
+            targetPosition.y -= fadeSpeed * Time.deltaTime;
             transform.position = targetPosition;
             yield return null;
         }
@@ -62,7 +62,7 @@ public class TransitionSpawnerScript : MonoBehaviour
         Color color = transparentMaterial.color; 
         while (color.a > 0)
         {
-            color.a -= fadeSpeed;
+            color.a -= fadeSpeed * Time.deltaTime;
             transparentMaterial.color = color;
             yield return null;
         }

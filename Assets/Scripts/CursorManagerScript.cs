@@ -11,6 +11,7 @@ public class CursorManagerScript : MonoBehaviour
 
     public float animDuration;
     private float animTimer;
+    public AudioClip whistleSound;
     
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class CursorManagerScript : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) {
+            AudioManagerScript.Instance.Play(whistleSound, 0.1f);
             animTimer = 0;
             Cursor.SetCursor(cursorClickTexture, cursorOffset, CursorMode.ForceSoftware);
         }

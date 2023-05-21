@@ -252,9 +252,7 @@ public class IngameCutsceneManagerScript : MonoBehaviour
         Color32 targetColor = scoreTextColor;
         targetColor.a = 0;
         while (scoreText.color.a > 0f) {
-            // Can't think of any way to slow down this lerp other than randomly doing it once every couple frames :/
-            int randomNum = Random.Range(1,8); // Change the upper bound to be higher or lower to make alpha fade slower or faster, respectively
-            if (randomNum == 1) { scoreTextColor = Color32.Lerp(scoreTextColor, targetColor, 0.01f); } // Change alpha
+            scoreTextColor = Color32.Lerp(scoreTextColor, targetColor, 2f * Time.deltaTime); // Change alpha
             scoreText.color = scoreTextColor;
 
             scoreTextPos.y -= 0.1f * Time.deltaTime; // Change y position (edit the number to change falling speed)

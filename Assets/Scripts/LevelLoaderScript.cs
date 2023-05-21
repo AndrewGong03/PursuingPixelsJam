@@ -12,17 +12,15 @@ public class LevelLoaderScript : MonoBehaviour
     public TMP_Text dayTitleScreenText;
     public GameObject timeline;
 
+    public AudioClip menuMusic;
+
     // Update is called once per frame
     void Update()
     {   
         // exception to the "click button then change scenes" for main screen 
-
         if (isSceneZero()) 
         {
-            if (Input.GetMouseButtonDown(0)) 
-            {
-                LoadNextLevel();
-            }
+            AudioManagerScript.Instance.PlayMusic(menuMusic);
         }
 
     }

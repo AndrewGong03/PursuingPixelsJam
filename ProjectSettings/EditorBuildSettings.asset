@@ -17,4 +17,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Cutscene3.unity
+    guid: e33027879ce2b4e39995546778361bad
+  - enabled: 1
+    path: Assets/Scenes/Cutscene4.unity
+    guid: b0c486a6bddcb474b86f63f9fb85e8b6
+  - enabled: 1
+    path: Assets/Scenes/Day2.unity
+    guid: 7a0e73d361e084bc79852f99d09398cf
+  - enabled: 1
+    path: Assets/Scenes/Cutscene5.unity
+    guid: cb4fc3f090b3244e2a3721dbe05b4fe8
+  - enabled: 1
+    path: Assets/Scenes/Cutscene6.unity
+    guid: 728d9d924344a4c41932e742b5a7873c
+  - enabled: 1
+    path: Assets/Scenes/Day3.unity
+    guid: 308eec78421734bdfab66b2e211ec7ba
   m_configObjects: {}
