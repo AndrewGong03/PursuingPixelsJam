@@ -7,17 +7,13 @@ public class ScoreScript : MonoBehaviour
 {
     public static ScoreScript instance; 
 
-    // 1) Money stats
-    public Text moneyText;
-    public static int money = 0; 
-
-    // 2) Popularity 
+    // 1) Popularity 
     public static int pop = 0;
 
-    // 3) Credibility
+    // 2) Credibility
     public static int cred = 0; 
 
-    // 4) Win score for each team, only want to change score of team playing rn 
+    // 3) Win score for each team, only want to change score of team playing rn 
     // a) League "Royal United" 
     // b) Underdog 
     // c) Drug Cartel 
@@ -26,17 +22,6 @@ public class ScoreScript : MonoBehaviour
     private void Awake()
     {
         instance = this; 
-    }
-
-    void Start()
-    {
-        moneyText.text = money.ToString();
-    }
-
-    public void ChangeMoney(int moneyChange) 
-    {
-        money += moneyChange; 
-        moneyText.text = money.ToString(); 
     }
 
     public void ChangePop(int popChange) 

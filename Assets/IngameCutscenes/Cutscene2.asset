@@ -22,15 +22,15 @@ MonoBehaviour:
   infoText: 'How will you respond to Brad Punchson of Brawlers FC tackling Prince
     Patrick? '
   redCardText:
-  - Red card for the tackler
-  - A harsh response for a harsh tackle.
+  - Red card for Brad Punchson!
+  - A tough ruling for a tough tackle. Was it too much?
   yellowCardText:
-  - Yellow card for the tackler
-  - The ref reasonably gives him a penalty.
+  - Yellow card for Brad Punchson!
+  - A light punch to Mr. Punchson! The ref lays down the law!
   greenCardText:
-  - Ignore the tackle
-  - This ref really must be blind to have missed that!
-  pointIfRed: 0000000000000000f6ffffff01000000
-  pointIfYellow: 00000000000000000000000001000000
-  pointIfGreen: 0000000000000000f6ffffffffffffff
+  - Seems fine to me!
+  - "And the ref turns a blind eye! Maybe he\u2019s scared that he\u2019ll be next!\u201D"
+  pointIfRed: 00000000ffffffff01000000
+  pointIfYellow: 000000000000000001000000
+  pointIfGreen: 00000000ffffffffffffffff
   teamCode: 0

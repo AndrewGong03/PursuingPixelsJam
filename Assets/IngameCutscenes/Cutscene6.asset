@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene6
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Well, I'll be, Kenny! Larry Lightning tripped over his own shoelace, but somehow
+    that led to a stunning goal for Fortune City!
+  - Even a blind squirrel finds a nut once in a while, Chip. The only question is,
+    does he get to keep it?
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: Do you let Larry Lightning's accidental goal stand?
+  redCardText:
+  - Goal for Fortune City!
+  - And the goal goes through! Fortune City lives up to their name for once!
+  yellowCardText:
+  - "An accident isn\u2019t a real goal"
+  - "Oof, and the ref denies the man his lottery. Looks like the crowd\u2019s on
+    Larry\u2019s side!"
+  greenCardText:
+  - Good stuff Larry, but let me tie that shoe for you.
+  - "Larry gets the goal, and his laces tied! It\u2019s a two for one!"
+  pointIfRed: 000000000000000001000000
+  pointIfYellow: ffffffff0000000000000000
+  pointIfGreen: 010000000000000001000000
+  teamCode: 0

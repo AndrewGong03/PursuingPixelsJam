@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene14
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - 'Hold the phone, Kenny! There''s a smoke bomb on the pitch! That''s not part
+    of the pyrotechnics for the Melody Makers'' halftime show, is it, Chip? '
+  - "No it isn\u2019t Chip. I\u2019d wager that this smoke show is courtesy of the
+    Underworld. But can the ref see through the clouds?"
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: How do you call the offside?
+  redCardText:
+  - Underworld, I know this was you. Penalty for Melody!
+  - And the ref's pointed at FC Underworld! Free kick for Melody.
+  yellowCardText:
+  - Halt the game until the smoke clears!
+  - Game's halted till the smoke clears. This is like a foggy day in London town!
+  greenCardText:
+  - Keep the game going!
+  - Ref's letting the game play on. Hope they've brought their night-vision goggles.
+  pointIfRed: 0000000001000000ffffffff
+  pointIfYellow: 000000000100000000000000
+  pointIfGreen: 00000000ffffffff01000000
+  teamCode: 0

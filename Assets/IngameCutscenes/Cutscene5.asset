@@ -22,15 +22,15 @@ MonoBehaviour:
   hasChoices: 1
   infoText: How do you respond to Prince Patrick's shot?
   redCardText:
-  - Kick the ball back
-  - '[placeholder]'
+  - Yellow card for Patrick
+  - And the ref calls it down on the prince! Time for revolution!
   yellowCardText:
-  - Yellow card
-  - '[placeholder]'
+  - ...
+  - And the ref swallows his pride. What a tinman!
   greenCardText:
-  - Do nothing
-  - '[placeholder]'
-  pointIfRed: 000000000a00000000000000ffffffff
-  pointIfYellow: 00000000000000000a000000ffffffff
-  pointIfGreen: 00000000000000000000000000000000
+  - "Let\u2019s see you handle *THIS* kick, sweet Prince!"
+  - The ref kicks the ball back at Patrick! The crowd loves it!
+  pointIfRed: 0100000000000000ffffffff
+  pointIfYellow: 0000000001000000ffffffff
+  pointIfGreen: 000000000000000000000000
   teamCode: 0

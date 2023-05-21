@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene13
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - 'Oh, the humanity! Razor Ronald has just slid in on Treble Turner with the force
+    of a grand piano being pushed off a building! '
+  - They'll be picking pieces of Turner out of the pitch for weeks, Chip.
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: How do you penalize Ronald for tackling Turner?
+  redCardText:
+  - "Ruiz, you\u2019re off the field this match!"
+  - 'It''s an early shower for Ronald! This game just got interesting. '
+  yellowCardText:
+  - "That\u2019s a yellow card for Ruiz!"
+  - That's a yellow for Ronald. Rough play, but the ref isn't seeing red yet.
+  greenCardText:
+  - ...
+  - And the ref turns a blind eye. He must have forgotten his glasses.
+  pointIfRed: 0100000001000000feffffff
+  pointIfYellow: 0000000000000000ffffffff
+  pointIfGreen: 00000000ffffffff00000000
+  teamCode: 0

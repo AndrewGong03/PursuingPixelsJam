@@ -23,15 +23,15 @@ MonoBehaviour:
   hasChoices: 1
   infoText: "Royal United\u2019s Mascot is making rude gestures. How will you respond?"
   redCardText:
-  - Banish the mascot from the game
-  - '[placeholder]'
+  - You, mascot! Off my field!
+  - Off to the doghouse! A harsh ruling for a light joke!
   yellowCardText:
-  - Reel in the mascot
-  - '[placeholder]'
+  - "Alright buddy, that\u2019s enough"
+  - The dog gets off with a light warning. What a great owner!
   greenCardText:
-  - Join the mascot
-  - '[placeholder]'
-  pointIfRed: 00000000f6ffffff0000000001000000
-  pointIfYellow: 00000000000000000000000001000000
-  pointIfGreen: 000000000a0000000000000000000000
+  - I want to join!
+  - And the ref joins in on the lovemaking. What a mess!
+  pointIfRed: ffffffff0000000001000000
+  pointIfYellow: 000000000000000001000000
+  pointIfGreen: 00000000010000000000000000000000
   teamCode: 0

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene15
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Unbelievable, Kenny! Three of the Melody Makers have started an impromptu jam
+    session right in the middle of the field!
+  - 'They''ve certainly put a new spin on ''playing'' the field, Chip. '
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: How do you call the offside?
+  redCardText:
+  - You three! Off the field!
+  - And the ref's forcing a substitution! They'll need a new conductor on the field.
+  yellowCardText:
+  - Stop wasting our time! Yellow cards!
+  - And the ref's not a fan of their tune, that's a yellow for time wasting!
+  greenCardText:
+  - 'Oh, I love this song! Keep it up! '
+  - The referee's letting them play on. This game has more notes than a symphony.
+  pointIfRed: ffffffffffffffff00000000
+  pointIfYellow: ffffffff0100000001000000
+  pointIfGreen: 010000000000000000000000
+  teamCode: 0

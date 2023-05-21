@@ -17,20 +17,20 @@ MonoBehaviour:
     their hot dogs and nachos like they're in a school cafeteria!
   - Ref's got a real snack attack to deal with.
   - Does he call for a time-out clean-up, let the game turn into a dodge-the-dinner
-    event, or sample the field cuisine himself for laughs?
+    event, or sample the field cuisine himself?
   speakerOrder: 020000000100000001000000
   hasChoices: 1
   infoText: Brawler FC fans are throwing food. How do you respond?
   redCardText:
-  - Pause the game and stop the food throwing
-  - '[placeholder]'
+  - Pause! Stop throwing food!
+  - And the ref reels it in! Lunchtime is over
   yellowCardText:
-  - Continue the game
-  - '[placeholder]'
+  - Carry on!
+  - Looks like the players are on their own in this food fight.
   greenCardText:
-  - Eat the food
-  - '[placeholder]'
-  pointIfRed: 00000000000000000a00000001000000
-  pointIfYellow: 0000000000000000f6ffffffffffffff
-  pointIfGreen: 000000000a000000f6ffffffffffffff
+  - "Free food? I\u2019ll take some."
+  - And the ref starts eating the food!? Are their salaries really that low?
+  pointIfRed: 000000000100000001000000
+  pointIfYellow: 0000000000000000ffffffffffffffff
+  pointIfGreen: 000000000a000000ffffffffffffffff
   teamCode: 0

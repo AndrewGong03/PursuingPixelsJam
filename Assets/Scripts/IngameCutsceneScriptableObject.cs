@@ -17,10 +17,9 @@ public class IngameCutsceneScriptableObject : ScriptableObject
     public string[] yellowCardText;
     public string[] greenCardText;
 
-    // Index 0: money value change if ref clicks red/yellow/green card 
-    // Index 1: popularity value change 
-    // Index 2: credibility value change 
-    // Index 3: win value change 
+    // Index 0: popularity value change 
+    // Index 1: credibility value change 
+    // Index 2: win value change 
     // still need to implement win score for team
     
     public int[] pointIfRed; 

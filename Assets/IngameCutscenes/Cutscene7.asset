@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene7
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - Wait a minute! That's a disaster!
+  - A Fortune City player just redirected the ball into his own net while trying
+    to dodge a Silicon Union video drone! More like Unfortunate City.
+  - Well, Chip, this is indeed a conundrum. The referee's got some decisions to make.
+  speakerOrder: 010000000100000002000000
+  hasChoices: 1
+  infoText: How do you respond to the own-goal caused by the drone?
+  redCardText:
+  - Goal for Silicon Union!
+  - The ref remains as heartless as the drone!
+  yellowCardText:
+  - No goal! Interference from the drone
+  - And the ref lays down the law! No room for tech in this game of muscle.
+  greenCardText:
+  - No goal, and no more drones for the rest of the game!
+  - Banning the drones entirely seems a bit harsh, no?
+  pointIfRed: 00000000ffffffffffffffff
+  pointIfYellow: 000000000100000000000000
+  pointIfGreen: ffffffff0100000000000000
+  teamCode: 0

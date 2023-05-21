@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene10
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "The lightning must have left some damage in Cyber Chris\u2019s mainframe."
+  - 'He fell completely limp as Larry Lightning raced past him and took a goal! '
+  - Does our referee offer a factory reboot or let the goal stand?
+  speakerOrder: 010000000100000002000000
+  hasChoices: 1
+  infoText: What will you do about Cyber Chris's malfunction?
+  redCardText:
+  - Goal for Fortune City!
+  - No tears for the machines from this ref!
+  yellowCardText:
+  - Interference! No goal!
+  - "The only interference seems to be with the ref\u2019s brain. What a call!"
+  greenCardText:
+  - Stupid machine! Goal for the humans!
+  - The ref makes a quip and a call. Double trouble!
+  pointIfRed: 000000000000000001000000
+  pointIfYellow: 010000000000000000000000
+  pointIfGreen: 010000000100000001000000
+  teamCode: 0

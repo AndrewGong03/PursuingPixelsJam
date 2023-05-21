@@ -112,6 +112,14 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    void OnTriggerStay2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Ball")) {
+            BallScript ballScript = other.gameObject.GetComponent<BallScript>();
+            ballScript.moveSpeed = this.kickSpeed;
+            ballScript.mvmtDirection = (other.transform.position - this.transform.position).normalized;
+        }
+    }
+
     bool IsOnScreen(GameObject gameObject)
     {
         Vector3 objectPosition = Camera.main.WorldToViewportPoint(gameObject.transform.position);

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene12
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "What's this? The Melody Makers are forming a conga line on the pitch! They\u2019re
+    dancing in a tight formation in front of their goal."
+  - This might be the most entertaining defense and illegal tactic I've ever seen,
+    Chip.
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: What do you do about the conga line?
+  redCardText:
+  - "Penalties against the Melody\u2019s defense! "
+  - 'And the ref''s booking them all! The party''s over folks. '
+  yellowCardText:
+  - 'Alright now, break it up. '
+  - "And they\u2019re let off with a gentle warning! "
+  greenCardText:
+  - 'Let them dance! '
+  - 'The ref''s got a sense of rhythm. The conga line continues! '
+  pointIfRed: ffffffff0100000001000000
+  pointIfYellow: 000000000000000000000000
+  pointIfGreen: 01000000ffffffff00000000
+  teamCode: 0

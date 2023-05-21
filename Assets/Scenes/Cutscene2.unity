@@ -1024,7 +1024,7 @@ PlayableDirector:
   m_GameObject: {fileID: 667295462}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: c96a8be8e81474e8a825d7f895aada3a, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1054,6 +1054,30 @@ PlayableDirector:
     value: {fileID: 667295465}
   - key: {fileID: -1979466311047079162, guid: c96a8be8e81474e8a825d7f895aada3a, type: 2}
     value: {fileID: 1126936342}
+  - key: {fileID: 4492537222552606860, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 1611666769}
+  - key: {fileID: -1839787526803518827, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 1472364839}
+  - key: {fileID: 1655149158413546460, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 1597470458}
+  - key: {fileID: -5618244246423384381, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 1740111072}
+  - key: {fileID: -7318684978809923786, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 83476877}
+  - key: {fileID: 4049641265722072077, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 254332225}
+  - key: {fileID: -6832670925533970630, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 291865444}
+  - key: {fileID: 5517584698615081933, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 734540431}
+  - key: {fileID: -7588145761258774112, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 773968418}
+  - key: {fileID: -1979466311047079162, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 1126936342}
+  - key: {fileID: 7048670053550164655, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 769223588}
+  - key: {fileID: -577005458329986061, guid: 9cc4fed4cc77549d691e27687f552a2a, type: 2}
+    value: {fileID: 667295465}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &667295464

@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06053df1a34cf47f6988fa7643744624, type: 3}
+  m_Name: Cutscene8
+  m_EditorClassIdentifier: 
+  dialogueLines:
+  - "By Zeus, Thor, and Larry Lightning, a freak bolt of lightning\u2019s just taken
+    out Silicon Union\u2019s electronic machinery!"
+  - Well, Chip, this is indeed a conundrum. The referee's got some decisions to make.
+  speakerOrder: 0100000002000000
+  hasChoices: 1
+  infoText: What's the protocol for lightning strikes?
+  redCardText:
+  - "Pause the game until Silicon\u2019s electronics come back online!"
+  - "Who knows how long that\u2019ll take? The crowd might get antsy!"
+  yellowCardText:
+  - Pause the game for five minutes
+  - And the ref is sympathetic to the tech titans!
+  greenCardText:
+  - No stoppage. Let the game continue!
+  - And the ref lets us jump right back in!
+  pointIfRed: ffffffff0000000000000000
+  pointIfYellow: 000000000100000000000000
+  pointIfGreen: 010000000000000001000000
+  teamCode: 0

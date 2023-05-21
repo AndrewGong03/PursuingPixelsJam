@@ -133,37 +133,25 @@ public class IngameCutsceneManagerScript : MonoBehaviour
                     StartCoroutine(grayTransition.FadeInGrayBottomHalf());
                     chipSpeechBubble.Show(currentCutscene.redCardText[1]);
                     cardClicked = true;
-                    yield return DisplayScoreText(0);
-                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfRed[0]);
-                    yield return DisplayScoreText(1);
-                    ScoreScript.instance.ChangePop(currentCutscene.pointIfRed[1]);
-                    yield return DisplayScoreText(2);
-                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfRed[2]);
-                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfRed[3], currentCutscene.teamCode);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfRed[0]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfRed[1]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfRed[2], currentCutscene.teamCode);
                 }
                 else if (yellowCard.clicked) {
                     StartCoroutine(grayTransition.FadeInGrayBottomHalf());
                     chipSpeechBubble.Show(currentCutscene.yellowCardText[1]);
                     cardClicked = true;
-                    yield return DisplayScoreText(0);
-                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfYellow[0]);
-                    yield return DisplayScoreText(1);
-                    ScoreScript.instance.ChangePop(currentCutscene.pointIfYellow[1]);
-                    yield return DisplayScoreText(2);
-                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfYellow[2]);
-                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfYellow[3], currentCutscene.teamCode);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfYellow[0]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfYellow[1]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfYellow[2], currentCutscene.teamCode);
                 }
                 else if (greenCard.clicked) {
                     StartCoroutine(grayTransition.FadeInGrayBottomHalf());
                     chipSpeechBubble.Show(currentCutscene.greenCardText[1]);
                     cardClicked = true;
-                    yield return DisplayScoreText(0);
-                    ScoreScript.instance.ChangeMoney(currentCutscene.pointIfGreen[0]);
-                    yield return DisplayScoreText(1);
-                    ScoreScript.instance.ChangePop(currentCutscene.pointIfGreen[1]);
-                    yield return DisplayScoreText(2);
-                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfGreen[2]);
-                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfGreen[3], currentCutscene.teamCode);
+                    ScoreScript.instance.ChangePop(currentCutscene.pointIfGreen[0]);
+                    ScoreScript.instance.ChangeCred(currentCutscene.pointIfGreen[1]);
+                    ScoreScript.instance.ChangeWin(currentCutscene.pointIfGreen[2], currentCutscene.teamCode);
                 }
                 else {
                     infoText.text = "";
@@ -181,20 +169,23 @@ public class IngameCutsceneManagerScript : MonoBehaviour
     }
 
     IEnumerator ExitCutscene() {
-        isCheckingCards = false;
         refText.text = "";
         infoText.text = "";
         scoreText.text = "";
         yield return new WaitForSeconds(exitDelay);
         yield return WaitForNextKeyPress();
         StartCoroutine(grayTransition.FadeOutGrayWholeScreen());
+        yield return DisplayScoreText(0);
+        yield return DisplayScoreText(1);
         yield return MoveToPositions(targetChipPosition + new Vector3(-5.6f,1.19f,0), targetKennyPosition + new Vector3(6.5f,1.19f,0));
         isInCutscene = false;
+        isCheckingCards = false;
         UnclickAllCards();
     }
 
     IEnumerator DisplayScoreText(int index) { // Important: Does not display win score changes, I'll try to implement that separately
-        Vector3 scoreTextPos = new Vector3 (0, 1.5f, 0); // Starting position for score text
+        Debug.Log("Displaying score text: " + index);
+        Vector3 scoreTextPos = new Vector3 (0, 1.6f, 0); // Starting position for score text
         scoreText.GetComponent<RectTransform>().anchoredPosition = scoreTextPos;
 
         // Preset color of score text, this will be changed
@@ -207,13 +198,10 @@ public class IngameCutsceneManagerScript : MonoBehaviour
         // Content of score change text depends on what type of score we're dealing with
         // Score change text will show up as red if losing points, green if gaining points
         switch (index) {
-            case 0: 
-                scoreText.text = "Money";
-                break;
-            case 1:
+            case 0:
                 scoreText.text = "Popularity";
                 break;
-            case 2:
+            case 1:
                 scoreText.text = "Credibility";
                 break;
         }
@@ -264,16 +252,17 @@ public class IngameCutsceneManagerScript : MonoBehaviour
         Color32 targetColor = scoreTextColor;
         targetColor.a = 0;
         while (scoreText.color.a > 0f) {
-            // Can't think of any way to slow down this lerp other than randomly doing it 1/5 frames :/
-            int randomNum = Random.Range(1,6); // Change 6 higher or lower to make alpha fade slower or faster, respectively
+            // Can't think of any way to slow down this lerp other than randomly doing it once every couple frames :/
+            int randomNum = Random.Range(1,8); // Change the upper bound to be higher or lower to make alpha fade slower or faster, respectively
             if (randomNum == 1) { scoreTextColor = Color32.Lerp(scoreTextColor, targetColor, 0.01f); } // Change alpha
             scoreText.color = scoreTextColor;
 
-            scoreTextPos.y -= 0.3f * Time.deltaTime; // Change y position (edit the number to change falling speed)
+            scoreTextPos.y -= 0.1f * Time.deltaTime; // Change y position (edit the number to change falling speed)
             scoreText.GetComponent<RectTransform>().anchoredPosition = scoreTextPos;
 
             yield return null;
         }
+        Debug.Log("Ending display score text: " + index);
     }
 
     IEnumerator MoveToPositions(Vector3? targetChipPos = null, Vector3? targetKennyPos = null)
